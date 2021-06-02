@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{% block title %} {%endblock%}
+{% load static%}
+
+{% block content %}
+{% load socialaccount %}
+
+{% if user.is_authenticated %}
+    <h1 style="margin-bottom: 25px;margin-left: 36px; font-size: 100px; color: #fbfcfd; text-align:center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"> Create Profile Page...</h1>
+    <br/><br/>
+
+    <div class = "form-group" style="color: #fbfcfd;">
+        <form method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{form.as_p}}
+        <button class = "btn btn-secondary">Create Profile Page </button>
+        </form>
+    </div>
+
+        </form>
+
+        {%else%}
+
+        Restricted access... must be an authenticated user
+
+        {%endif%}
+
+{% endblock %}

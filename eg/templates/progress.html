@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+<div>
+    <ul>
+
+        <div>
+            <img src="{% static 'eg/images/grey-box.png' %}" class="outline" width="1000" height="100">
+            <img src="{% static 'eg/images/blue-box.jpg' %}" class="bar" width="{{progress}}" height="100">
+        </div>
+
+        <style>
+            .bar
+            {
+                position: relative
+            }
+            .outline
+            {
+                position: absolute
+            }
+
+        </style>
+        <div style="color: white;">
+        <p>{{user.username}}, you have made {{progress_percentage}} % progress towards the next level</p>
+        <p>Your level is {{level}}</p>
+        {% if level > 0 %}
+        <p>Bronze Trophy Earned <img src="{% static 'eg/images/bronze.png' %}" width="150" height="150"></p>
+        {% endif %}
+        {% if level > 1 %}
+        <p> Silver Trophy Earned <img src="{% static 'eg/images/silver.png' %}" width="150" height="150"></p>
+        {% endif %}
+        {% if level > 2 %}
+        <p> Gold Trophy Earned <img src="{% static 'eg/images/gold.png' %}" width="150" height="150"></p>
+        {% endif %}
+        <a class="btn" href="/exercise" role="button" style="color: #fbfcfd; padding: 10px 25px; background: transparent; border: 1px solid #fff; border-radius: 20px; outline: none; cursor: pointer">add another exercise?</a>
+        <a class="btn" href="/" role="button" style="color: #fbfcfd; padding: 10px 25px; background: transparent; border: 1px solid #fff; border-radius: 20px; outline: none; cursor: pointer">go back to home</a>
+    </ul>
+</div>
+</div>
+
+{% endblock %}

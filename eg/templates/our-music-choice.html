@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{% block content %}
+
+<h1 style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size:100px; color: #fbfcfd; text-align:center">LIFTING TYPE BEATS</h1>
+<h4 style="color: #fbfcfd; text-align:center">Listen to our Favorite Artist of the Month and Get Active!</h4>
+
+{% if results %}
+<div class="container bg-dark p-2">
+{% for song in results %}
+
+<ul class="list-unstyled">
+    <li class="media">
+    <img src="{{song.album.images.0.url}}" class="rounded-circle" style="max-width:10%; margin-right: 10px" alt="">
+      <div class="media-body">
+        <h5 style ="background-color:lightgreen;">{{song.name}}</h5>
+        <div class="list-group-item"><a href='{{song.preview_url}}'><button type="button"
+            class="btn btn-dark  mt-1">PLAY SONG</button></a></div>
+      </div>
+    </li>
+  </ul>
+
+{%endfor%}
+</div>
+{% endif %}
+
+{% endblock %}
