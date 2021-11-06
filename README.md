@@ -14,4 +14,4 @@ In the forum, the user can view and like other user's posts as well as create th
 If a user inputs certain numbers of exercises, they will be rewarded with a bronze, silver, and gold trophy which appears on their profile page. 
 The user can also view the "Bangerz" tab which redirects to a page with our favorite artist of the month's tracks acquired from Spotify.
 
-
+DOWNLOADED FROM CLASS REPO SINCE NOW IT'S DELETED.
